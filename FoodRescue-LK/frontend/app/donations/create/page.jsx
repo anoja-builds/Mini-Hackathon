@@ -1,1 +1,2 @@
-export default function CreateDonationPage() { return <h1>Create donation</h1>; }
+import DonationForm from "../components/DonationForm";
+export default function CreateDonationPage() { return <DonationForm />; }

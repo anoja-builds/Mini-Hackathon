@@ -1,3 +1,7 @@
+using FoodRescue.Api.Models;
 using Microsoft.EntityFrameworkCore;
 namespace FoodRescue.Api.Data;
-public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options) { }
+public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
+{
+    public DbSet<Donation> Donations => Set<Donation>();
+}

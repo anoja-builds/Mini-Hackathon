@@ -1,2 +1,2 @@
 namespace FoodRescue.Api.DTOs.Pickups;
-public class CreatePickupDto { }
+public class CreatePickupDto { public int DonationId { get; set; } public int OrganizationId { get; set; } public DateTime PickupDate { get; set; } public TimeSpan PickupTime { get; set; } public string PickupLocation { get; set; } = ""; public string PersonResponsible { get; set; } = ""; public string ContactNumber { get; set; } = ""; public string Status { get; set; } = "Pending"; }

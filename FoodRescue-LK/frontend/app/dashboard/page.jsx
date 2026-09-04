@@ -1,1 +1,5 @@
-export default function DashboardPage() { return <h1>Dashboard</h1>; }
+"use client";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { apiRequest } from "../../services/api";
+export default function DashboardPage() { const [stats, setStats] = useState({ donations: 0, requests: 0, pickups: 0, organizations: 0 }); useEffect(() => { Promise.all(["donations", "foodrequests", "pickups", "organizations"].map((path) => apiRequest(`/${path}`))).then(([donations, requests, pickups, organizations]) => setStats({ donations: donations.length, requests: requests.length, pickups: pickups.length, organizations: organizations.length })); }, []); return <section className="page-shell"><div className="page-heading"><div><p className="eyebrow">FoodRescue LK / Overview</p><h1>Make food count.</h1><p className="lede">A clear view of every donation, request, partner, and pickup in motion.</p></div></div><div className="stats-grid">{[["Donations", stats.donations, "/donations"], ["Food requests", stats.requests, "/requests"], ["Pickups", stats.pickups, "/pickups"], ["Organizations", stats.organizations, "/organizations"]].map(([label, value, href]) => <Link className="stat-card" href={href} key={label}><span className="eyebrow">{label}</span><strong>{value}</strong><span className="muted">View records →</span></Link>)}</div></section>; }

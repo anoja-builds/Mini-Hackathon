@@ -1,2 +1,2 @@
 namespace FoodRescue.Api.DTOs.Donations;
-public class DonationDto { }
+public class DonationDto : CreateDonationDto { public int Id { get; set; } }

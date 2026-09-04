@@ -8,5 +8,8 @@ public class CreateOrganizationDto
 	[Required, EmailAddress] public string Email { get; set; } = string.Empty;
 	[Required, RegularExpression("^(07\\d{8}|\\+947\\d{8})$")] public string Phone { get; set; } = string.Empty;
 	[Required, MinLength(10)] public string Address { get; set; } = string.Empty;
+	[Required] public string District { get; set; } = string.Empty;
+	[Required, MinLength(3)] public string Location { get; set; } = string.Empty;
+	[MaxLength(500)] public string Description { get; set; } = string.Empty;
 	[Required] public string Status { get; set; } = "Active";
 }

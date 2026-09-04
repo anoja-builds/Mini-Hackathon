@@ -1,2 +1,2 @@
 namespace FoodRescue.Api.Models;
-public class Pickup { }
+public class Pickup { public int Id { get; set; } public int DonationId { get; set; } public int OrganizationId { get; set; } public DateTime PickupDate { get; set; } public TimeSpan PickupTime { get; set; } public string PickupLocation { get; set; } = ""; public string PersonResponsible { get; set; } = ""; public string ContactNumber { get; set; } = ""; public string Status { get; set; } = "Pending"; }

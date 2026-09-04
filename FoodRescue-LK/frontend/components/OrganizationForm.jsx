@@ -2,13 +2,15 @@
 import Link from "next/link";
 import { useState } from "react";
 
-const fields = [["name", "Organization name", "text"], ["type", "Organization type", "select"], ["contactPerson", "Contact person", "text"], ["email", "Email address", "email"], ["phone", "Phone number", "tel"], ["address", "Address", "text"]];
+const fields = [["name", "Organization name", "text"], ["type", "Organization type", "select"], ["contactPerson", "Contact person", "text"], ["email", "Email address", "email"], ["phone", "Phone number", "tel"], ["district", "District", "text"], ["location", "Location", "text"], ["address", "Complete address", "text"], ["description", "Description", "text"]];
 
 function validate(values) {
 	const errors = {};
 	const name = String(values.name || "").trim();
 	const contactPerson = String(values.contactPerson || "").trim();
 	const address = String(values.address || "").trim();
+	const district = String(values.district || "").trim();
+	const location = String(values.location || "").trim();
 	const phone = String(values.phone || "").trim().replace(/[\s-]/g, "");
 	if (!name) errors.name = "Please enter the organization name.";
 	else if (name.length < 3) errors.name = "Organization name must contain at least 3 characters.";
@@ -20,6 +22,8 @@ function validate(values) {
 	if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(values.email || "").trim())) errors.email = "Please enter a valid email address.";
 	if (!/^(?:07\d{8}|\+947\d{8})$/.test(phone)) errors.phone = "Please enter a valid Sri Lankan phone number.";
 	if (!address || address.length < 10) errors.address = "Please enter a complete address.";
+	if (!district) errors.district = "Please enter a district.";
+	else if (location.length < 3) errors.location = "Please enter a location.";
 	if (!values.status) errors.status = "Please select a status.";
 	return errors;
 }

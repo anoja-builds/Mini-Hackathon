@@ -1,2 +1,2 @@
 namespace FoodRescue.Api.DTOs.FoodRequests;
-public class UpdateFoodRequestDto { }
+public class UpdateFoodRequestDto : CreateFoodRequestDto { }

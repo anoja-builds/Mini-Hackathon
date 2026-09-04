@@ -1,2 +1,2 @@
 namespace FoodRescue.Api.DTOs.Donations;
-public class UpdateDonationDto { }
+public class UpdateDonationDto : CreateDonationDto { }

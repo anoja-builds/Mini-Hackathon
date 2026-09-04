@@ -56,6 +56,8 @@ dotnet ef migrations add InitialCreate
 dotnet ef database update
 ```
 
+The application applies pending migrations automatically in Development mode.
+
 The backend loads `backend/.env` automatically. It contains this environment variable:
 
 ```env

@@ -1,1 +1,2 @@
-export default function DonationsPage() { return <h1>Donations</h1>; }
+import CrudList from "../../components/CrudList";
+export default function DonationsPage() { return <CrudList resource="donations" />; }

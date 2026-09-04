@@ -8,5 +8,8 @@ public class OrganizationDto
 	public string Email { get; set; } = string.Empty;
 	public string Phone { get; set; } = string.Empty;
 	public string Address { get; set; } = string.Empty;
+	public string District { get; set; } = string.Empty;
+	public string Location { get; set; } = string.Empty;
+	public string Description { get; set; } = string.Empty;
 	public string Status { get; set; } = string.Empty;
 }

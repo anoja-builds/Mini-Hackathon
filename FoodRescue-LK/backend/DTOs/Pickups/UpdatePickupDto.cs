@@ -1,2 +1,2 @@
 namespace FoodRescue.Api.DTOs.Pickups;
-public class UpdatePickupDto { }
+public class UpdatePickupDto : CreatePickupDto { }

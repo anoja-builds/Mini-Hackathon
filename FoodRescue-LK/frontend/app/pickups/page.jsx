@@ -1,1 +1,2 @@
-export default function PickupsPage() { return <h1>Pickups</h1>; }
+import CrudList from "../../components/CrudList";
+export default function PickupsPage() { return <CrudList resource="pickups" />; }

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Hero() {
-  return <section><h1>Rescue food. Nourish communities.</h1></section>;
+  return <section className="home-page"><div className="hero-panel"><div className="hero-copy"><p className="eyebrow">FoodRescue LK / Shared table</p><h1>Good food should keep moving.</h1><p className="hero-lede">A calmer way for donors, organizations, and volunteers to turn surplus into something useful.</p><div className="hero-actions"><Link className="button button--light" href="/donations/create">Share a donation <span aria-hidden="true">→</span></Link><Link className="text-link text-link--light" href="/dashboard">Open dashboard</Link></div></div><div className="hero-art"><div className="hero-note"><strong>Today’s rhythm</strong><span>Donate → Match → Collect</span></div><div className="hero-image hero-image--main" /><div className="hero-image hero-image--small" /></div></div><div className="workflow-strip"><div><span className="workflow-number">01</span><strong>Make a difference</strong><p>List food while it is still fresh.</p></div><div><span className="workflow-number">02</span><strong>Find the right hands</strong><p>Connect with trusted local partners.</p></div><div><span className="workflow-number">03</span><strong>Close the loop</strong><p>Track each pickup to the table.</p></div></div></section>;
 }

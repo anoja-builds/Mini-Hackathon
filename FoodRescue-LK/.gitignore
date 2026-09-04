@@ -10,3 +10,4 @@ backend/obj/
 *.user
 *.suo
 .env.local
+backend/.env

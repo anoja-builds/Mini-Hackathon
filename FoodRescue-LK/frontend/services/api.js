@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5184/api";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5002/api";
 
 export async function apiRequest(path, options = {}) {
   const response = await fetch(`${API_BASE_URL}${path}`, {

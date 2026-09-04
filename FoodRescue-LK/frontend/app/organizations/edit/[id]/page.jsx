@@ -1,1 +1,6 @@
-export default function EditOrganizationPage({ params }) { return <h1>Edit organization {params.id}</h1>; }
+"use client";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import OrganizationForm from "../../../../components/OrganizationForm";
+import { readOrganizations, updateOrganization } from "../../../../services/organizations";
+export default function EditOrganizationPage({ params }) { const router = useRouter(); const [organization, setOrganization] = useState(null); useEffect(() => { readOrganizations().then((items) => setOrganization(items.find((item) => String(item.id) === params.id))).catch(() => setOrganization(undefined)); }, [params.id]); if (organization === null) return <section className="empty-state"><p>Loading organization...</p></section>; if (!organization) return <section className="empty-state"><h1>Organization not found</h1><p>This partner may have been removed.</p></section>; return <section className="form-page"><div className="page-heading"><div><p className="eyebrow">Organizations / Edit partner</p><h1>Update organization</h1><p className="lede">Keep contact details current so coordination stays effortless.</p></div></div><OrganizationForm initialValues={organization} submitLabel="Save changes" onSubmit={async (values) => { await updateOrganization(organization.id, values); router.push("/organizations"); }} /></section>; }

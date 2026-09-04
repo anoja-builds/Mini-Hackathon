@@ -1,0 +1,5 @@
+:root { font-family: Arial, sans-serif; color: #1f2937; background: #f8fafc; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { min-height: calc(100vh - 128px); padding: 2rem; }
+a { color: inherit; text-decoration: none; }

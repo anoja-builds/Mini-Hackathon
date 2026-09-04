@@ -65,3 +65,36 @@ ConnectionStrings__DefaultConnection=Host=localhost;Port=5432;Database=foodrescu
 ```
 
 The connection format is `Host`, `Port`, `Database`, `Username`, and `Password`. PostgreSQL normally listens on port `5432`.
+
+### Deploy with GitHub
+
+The repository is ready to deploy as two services from the `main` branch.
+
+#### Backend on Railway
+
+1. Create a Railway project and choose **Deploy from GitHub repo**.
+2. Select `anoja-builds/Mini-Hackathon`, branch `main`.
+3. Set the service root directory to `FoodRescue-LK/backend`.
+4. Railway will use the included `backend/Dockerfile`.
+5. Add these variables in Railway:
+
+```text
+ConnectionStrings__DefaultConnection=YOUR_NEON_CONNECTION_STRING
+ASPNETCORE_ENVIRONMENT=Production
+```
+
+6. Deploy and test `https://YOUR-RAILWAY-DOMAIN/api/organizations`.
+
+#### Frontend on Vercel
+
+1. Import `anoja-builds/Mini-Hackathon` into Vercel.
+2. Set the root directory to `FoodRescue-LK/frontend`.
+3. Add this variable:
+
+```text
+NEXT_PUBLIC_API_URL=https://YOUR-RAILWAY-DOMAIN/api
+```
+
+4. Deploy with the default Next.js build settings.
+
+Do not commit `backend/.env`. The deployed frontend must use the Railway URL, not `localhost`.
